@@ -19,11 +19,11 @@ public class HareAndTurtleRace {
         RaceTrack raceTrack = RaceTrack.withLength(100, METER);
 
         Runner hare = new Hare();
-        Runner turtle = new Tortoise();
+        Runner tortoise = new Tortoise();
 
         Set<RaceRunnable> runnables = Set.of(
                 new RaceRunnable(hare, raceTrack),
-                new RaceRunnable(turtle, raceTrack)
+                new RaceRunnable(tortoise, raceTrack)
         );
 
         runnables.forEach(runnable -> configureAndRun(runnable));
