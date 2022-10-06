@@ -13,8 +13,8 @@ public class RangeTest {
 
     @Test
     void can_recognize_if_the_specified_value_is_not_contained_in_this_range() {
-        assertFalse(Range.of(0, 10).contains(11));
-        assertFalse(Range.of(0, 10).contains(-1));
+        assertFalse(Range.of(0, 10).contains(10.0001));
+        assertFalse(Range.of(0, 10).contains(-.00001));
     }
 
     @Test
