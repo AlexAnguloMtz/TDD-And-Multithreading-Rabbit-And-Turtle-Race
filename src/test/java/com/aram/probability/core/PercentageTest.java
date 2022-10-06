@@ -18,10 +18,4 @@ public class PercentageTest {
                 () -> Percentage.of(900));
     }
 
-    @Test
-    void cannot_create_percentage_above_one_hundred() {
-        assertThrows(IllegalPercentageException.class,
-                () -> Percentage.of(900));
-    }
-
 }
