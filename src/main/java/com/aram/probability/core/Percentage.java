@@ -1,8 +1,12 @@
 package com.aram.probability.core;
 
+import lombok.EqualsAndHashCode;
 import lombok.Getter;
+import lombok.ToString;
 
 @Getter
+@EqualsAndHashCode
+@ToString
 public class Percentage {
 
     private final double value;
@@ -10,6 +14,10 @@ public class Percentage {
     private Percentage(double value) {
         validate(value);
         this.value = value;
+    }
+
+    public static Percentage of(double value) {
+        return new Percentage(value);
     }
 
     public static boolean isValid(double value) {
@@ -20,10 +28,6 @@ public class Percentage {
         if (!isValid(value)) {
             throw new IllegalPercentageException("%d is not a valid percentage");
         }
-    }
-
-    public static Percentage of(double value) {
-        return new Percentage(value);
     }
 
 }
