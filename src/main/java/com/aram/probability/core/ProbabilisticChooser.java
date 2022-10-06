@@ -47,7 +47,7 @@ public class ProbabilisticChooser <T> {
     private void validate(Collection<Probability<T>> probabilities) {
         if (!isValidTotalProbability(probabilities)) {
             throw new IllegalArgumentException(format(
-                "Cannot pick an element because these probabilities do not sum up exactly %f",
+                "Cannot pick an element because these probabilities do not sum exactly %f",
                 REQUIRED_TOTAL_PROBABILITY));
         }
     }

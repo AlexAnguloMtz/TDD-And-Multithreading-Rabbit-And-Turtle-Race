@@ -16,7 +16,7 @@ public class Range {
     private final double ceiling;
 
     private Range(double floor, double ceiling) {
-        Assert.IsGreater(ceiling, floor, format(
+        Assert.isGreater(ceiling, floor, format(
             "Cannot create instance if ceiling %f is not greater than floor %f", ceiling, floor));
         this.floor = floor;
         this.ceiling = ceiling;
