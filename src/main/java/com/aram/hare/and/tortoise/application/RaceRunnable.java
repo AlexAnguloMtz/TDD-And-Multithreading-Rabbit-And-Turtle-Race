@@ -71,6 +71,7 @@ public class RaceRunnable implements Observable, Runnable {
 
     private void letTheRunnerRun() throws InterruptedException {
         runner.runIn(raceTrack);
+        sleep(1000);
         timeCounter.add(1);
     }
 
