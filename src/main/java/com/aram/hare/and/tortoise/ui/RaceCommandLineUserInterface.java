@@ -9,15 +9,15 @@ public class RaceCommandLineUserInterface implements Observer {
 
     private static final String SPACE = " ";
 
-    private final RaceRunnable runnable;
+    private final RaceRunnable race;
 
     public RaceCommandLineUserInterface(RaceRunnable runnable) {
-        this.runnable = runnable;
+        this.race = runnable;
     }
 
     @Override
     public void update() {
-        if (!runnable.isRunnerAtFinishingLine()) {
+        if (!race.isRunnerAtFinishingLine()) {
             display(formattedPositionOfRunner());
         } else {
             display(resultsOfRunner());
@@ -26,7 +26,7 @@ public class RaceCommandLineUserInterface implements Observer {
 
     private String resultsOfRunner() {
         return format("%s took %d seconds to finish the race",
-                runnable.nameOfRunner(), runnable.totalSeconds());
+                race.nameOfRunner(), race.totalSeconds());
     }
 
     private String formattedPositionOfRunner() {
@@ -34,12 +34,12 @@ public class RaceCommandLineUserInterface implements Observer {
     }
 
     private String necessarySpaces() {
-        final int necessarySpaces = runnable.positionOfRunner() - 1;
+        final int necessarySpaces = race.positionOfRunner() - 1;
         return SPACE.repeat(necessarySpaces);
     }
 
     private char firstLetterOfRunnersName() {
-        return runnable.nameOfRunner().charAt(0);
+        return race.nameOfRunner().charAt(0);
     }
 
     private void display(String message) {
