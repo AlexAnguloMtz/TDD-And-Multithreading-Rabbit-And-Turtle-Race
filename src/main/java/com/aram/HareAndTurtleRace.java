@@ -1,4 +1,4 @@
-package com.aram.hare.and.turtle;
+package com.aram;
 
 import com.aram.hare.and.turtle.application.RaceRunnable;
 import com.aram.hare.and.turtle.runner.hare.Hare;

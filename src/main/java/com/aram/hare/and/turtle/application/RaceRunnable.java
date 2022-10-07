@@ -28,7 +28,7 @@ public class RaceRunnable implements Observable, Runnable {
     @Override
     public void run() {
         try {
-            runUntilRunnerArrivesToFinishingLine();
+            runRace();
         } catch (InterruptedException exception) {
             throw new RuntimeException(exception);
         }
@@ -56,23 +56,31 @@ public class RaceRunnable implements Observable, Runnable {
         return raceTrack.isAtFinishingLine(runner);
     }
 
-    private void runUntilRunnerArrivesToFinishingLine() throws InterruptedException {
-        raceTrack.placeAtStartingLine(runner); // Must be called before notifyInitialState();
+    public int totalSeconds() {
+        return timeCounter.getValue();
+    }
+
+    private void runRace() throws InterruptedException {
+        setInitialState(); // Must be called before notifyInitialState();
         notifyInitialState();
         while (!raceTrack.isAtFinishingLine(runner)) {
-            runner.runIn(raceTrack);
-            sleep(1000);
-            timeCounter.add(1);
+            letTheRunnerRun();
             notifyChange();
         }
+    }
+
+    private void letTheRunnerRun() throws InterruptedException {
+        runner.runIn(raceTrack);
+        timeCounter.add(1);
+    }
+
+    private void setInitialState() {
+        raceTrack.placeAtStartingLine(runner);
     }
 
     private void notifyInitialState() {
         notifyChange();
     }
 
-    public int totalSeconds() {
-        return timeCounter.getValue();
-    }
 
 }
