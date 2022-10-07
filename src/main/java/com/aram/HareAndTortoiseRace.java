@@ -16,7 +16,7 @@ public class HareAndTortoiseRace {
 
     public static void main(String[] args) {
 
-        RaceTrack raceTrack = RaceTrack.withLength(100, METER);
+        RaceTrack raceTrack = RaceTrack.withLength(70, METER);
 
         Runner hare = new Hare();
         Runner tortoise = new Tortoise();
