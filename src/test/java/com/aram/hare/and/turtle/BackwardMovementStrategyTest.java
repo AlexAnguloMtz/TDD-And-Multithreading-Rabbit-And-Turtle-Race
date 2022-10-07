@@ -1,10 +1,10 @@
 package com.aram.hare.and.turtle;
 
-import com.aram.racing.core.mocks.TwentyPositionsBackwardRunner;
-import com.aram.racing.core.race.track.RaceTrack;
+import com.aram.racing.mocks.TwentyPositionsBackwardRunner;
+import com.aram.racing.track.RaceTrack;
 import org.junit.jupiter.api.BeforeEach;
 
-import static com.aram.racing.core.race.track.UnitOfLength.METER;
+import static com.aram.racing.track.UnitOfLength.METER;
 
 public abstract class BackwardMovementStrategyTest extends MovementStrategyTest {
 

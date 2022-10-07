@@ -1,10 +1,10 @@
 package com.aram.hare.and.turtle.application;
 
-import com.aram.counter.Counter;
+import com.aram.common.Counter;
 import com.aram.observer.Observable;
 import com.aram.observer.Observer;
-import com.aram.racing.core.race.track.RaceTrack;
-import com.aram.racing.core.runner.Runner;
+import com.aram.racing.track.RaceTrack;
+import com.aram.racing.runner.Runner;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -22,7 +22,7 @@ public class RaceRunnable implements Observable, Runnable {
         this.runner = runner;
         this.raceTrack = raceTrack;
         this.observers = new HashSet<>();
-        this.timeCounter = new Counter();
+        this.timeCounter = Counter.withZero();
     }
 
     @Override

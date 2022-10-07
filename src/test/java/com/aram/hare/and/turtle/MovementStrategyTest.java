@@ -1,7 +1,7 @@
 package com.aram.hare.and.turtle;
 
-import com.aram.racing.core.race.track.RaceTrack;
-import com.aram.racing.core.runner.Runner;
+import com.aram.racing.track.RaceTrack;
+import com.aram.racing.runner.Runner;
 
 public abstract class MovementStrategyTest {
 
